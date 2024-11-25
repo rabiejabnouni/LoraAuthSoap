@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
+Voir https://eclipse-ee4j.github.io/jaxb-ri 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2024.11.24 à 05:52:43 PM CET 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://example.com/users">
+    <schemaBindings map="false">
+      <package name="com.example.users"/>
+    </schemaBindings>
+    <bindings scd="tns:LoginRequest">
+      <class ref="com.example.users.LoginRequest"/>
+    </bindings>
+    <bindings scd="tns:RegistrationRequest">
+      <class ref="com.example.users.RegistrationRequest"/>
+    </bindings>
+    <bindings scd="tns:UpdatePasswordRequest">
+      <class ref="com.example.users.UpdatePasswordRequest"/>
+    </bindings>
+    <bindings scd="tns:ConfirmeToken">
+      <class ref="com.example.users.ConfirmeToken"/>
+    </bindings>
+    <bindings scd="tns:ForgetRequest">
+      <class ref="com.example.users.ForgetRequest"/>
+    </bindings>
+    <bindings scd="tns:GoogleLoginRequest">
+      <class ref="com.example.users.GoogleLoginRequest"/>
+    </bindings>
+    <bindings scd="tns:GoogleLoginResponse">
+      <class ref="com.example.users.GoogleLoginResponse"/>
+    </bindings>
+    <bindings scd="tns:DeleteById">
+      <class ref="com.example.users.DeleteById"/>
+    </bindings>
+    <bindings scd="tns:GetByEmail">
+      <class ref="com.example.users.GetByEmail"/>
+    </bindings>
+    <bindings scd="tns:GetAll">
+      <class ref="com.example.users.GetAll"/>
+    </bindings>
+    <bindings scd="~tns:User">
+      <class ref="com.example.users.User"/>
+    </bindings>
+    <bindings scd="tns:Response">
+      <class ref="com.example.users.Response"/>
+    </bindings>
+    <bindings scd="~tns:birthDay">
+      <class ref="com.example.users.BirthDay"/>
+    </bindings>
+    <bindings scd="~tns:Token">
+      <class ref="com.example.users.Token"/>
+    </bindings>
+  </bindings>
+</bindings>
+

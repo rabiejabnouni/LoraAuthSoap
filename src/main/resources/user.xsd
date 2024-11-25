@@ -1,0 +1,135 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.com/users"
+           xmlns="http://example.com/users"
+           elementFormDefault="qualified">
+
+    <!-- Définition des types de données existants -->
+    <xs:element name="LoginRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="RegistrationRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="firstName" type="xs:string"/>
+                <xs:element name="lastName" type="xs:string"/>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="UpdatePasswordRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="newPassword" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ConfirmeToken">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Token" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ForgetRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="username" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Requête de connexion via Google -->
+    <xs:element name="GoogleLoginRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="email" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Réponse de connexion via Google -->
+    <xs:element name="GoogleLoginResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+                <xs:element name="token" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteById">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetByEmail">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="email" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetAll">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="User" type="User" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Définition de l'utilisateur -->
+    <xs:complexType name="User">
+        <xs:sequence>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="appUserRole" type="xs:string"/>
+            <xs:element name="locked" type="xs:boolean"/>
+            <xs:element name="enabled" type="xs:boolean"/>
+            <xs:element name="imageProfilPath" type="xs:string"/>
+            <xs:element name="birthDay" type="birthDay"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Définition de la date de naissance -->
+    <xs:complexType name="birthDay">
+        <xs:sequence>
+            <xs:element name="day" type="xs:int"/>
+            <xs:element name="month" type="xs:int"/>
+            <xs:element name="year" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Définition du token -->
+    <xs:complexType name="Token">
+        <xs:sequence>
+            <xs:element name="token" type="xs:string"/>
+            <xs:element name="createdDate" type="xs:dateTime"/>
+            <xs:element name="expiryDate" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
